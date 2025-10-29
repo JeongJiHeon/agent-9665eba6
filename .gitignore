@@ -1,0 +1,65 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+postgres_data/
+
+# Google OAuth
+credentials.json
+token.json
+tokens/
+
+# Vector Database
+chroma_db/
+
+# Docker volumes
+backend_logs/
+backend_tokens/
+backend_chroma/
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Node modules (if any)
+node_modules/
+
+# OS
+Thumbs.db
+.DS_Store

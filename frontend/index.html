@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구글 캘린더 AI 에이전트</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📅 구글 캘린더 AI 에이전트</h1>
+            <p class="subtitle">자연어로 일정을 추가하고 관리하세요</p>
+        </header>
+
+        <main>
+            <!-- Authentication Section -->
+            <div id="auth-section" class="card">
+                <h2>🔐 인증</h2>
+                <div id="auth-status" class="auth-status">
+                    <span class="status-indicator not-connected"></span>
+                    <span>구글 캘린더와 연결되지 않음</span>
+                </div>
+                <button id="auth-button" class="btn btn-primary">구글 캘린더 연결</button>
+            </div>
+
+            <!-- Chat Section -->
+            <div class="card">
+                <h2>💬 AI 어시스턴트와 대화하기</h2>
+                
+                <div id="chat-container">
+                    <div id="chat-messages">
+                        <div class="message assistant-message">
+                            <div class="message-avatar">🤖</div>
+                            <div class="message-content">
+                                <p>안녕하세요! 구글 캘린더 AI 어시스턴트입니다.</p>
+                                <p>자연어로 일정을 추가해보세요. 예시:</p>
+                                <ul>
+                                    <li>"내일 오후 3시에 회의 일정 추가해줘"</li>
+                                    <li>"이번 주 금요일 저녁 7시에 저녁 약속"</li>
+                                    <li>"다음 주 월요일 오전 10시부터 12시까지 프로젝트 미팅"</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="loading-indicator" id="loading" style="display: none;">
+                        <div class="spinner"></div>
+                        <span>처리 중...</span>
+                    </div>
+                </div>
+
+                <div class="chat-input-container">
+                    <input 
+                        type="text" 
+                        id="user-input" 
+                        placeholder="일정을 자연어로 입력하세요..."
+                        autocomplete="off"
+                    >
+                    <button id="send-button" class="btn btn-primary">
+                        <span>전송</span>
+                        <span class="send-icon">📤</span>
+                    </button>
+                </div>
+
+                <div class="quick-actions">
+                    <h3>빠른 작업</h3>
+                    <div class="quick-buttons">
+                        <button class="btn btn-secondary quick-btn" data-message="오늘 일정 보여줘">
+                            📆 오늘 일정
+                        </button>
+                        <button class="btn btn-secondary quick-btn" data-message="이번 주 일정 보여줘">
+                            📅 이번 주 일정
+                        </button>
+                        <button class="btn btn-secondary quick-btn" data-message="다음 주 일정 보여줘">
+                            🗓️ 다음 주 일정
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calendar Events Section -->
+            <div class="card">
+                <h2>📋 최근 일정</h2>
+                <div id="events-list">
+                    <p class="placeholder">일정을 불러오려면 AI 어시스턴트에게 요청하세요.</p>
+                </div>
+                <button id="refresh-events" class="btn btn-secondary">
+                    🔄 일정 새로고침
+                </button>
+            </div>
+
+            <!-- History Section -->
+            <div class="card">
+                <h2>📜 대화 기록</h2>
+                <div id="history-container">
+                    <div id="history-list">
+                        <p class="placeholder">대화 기록이 표시됩니다.</p>
+                    </div>
+                    <button id="clear-history" class="btn btn-danger">
+                        🗑️ 기록 삭제
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by LangChain & Google Calendar API</p>
+            <p class="version">v1.0.0</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
